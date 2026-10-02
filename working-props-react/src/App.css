@@ -1,0 +1,30 @@
+.caja{
+  display: flex;
+}
+
+.container-img{
+  width: 50%;
+}
+.Caja{
+  user-select: none;
+}
+
+.caja-reyes-godos{
+  border-radius: 4em;
+  background: gold;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem ;
+}
+
+
+.reyes-godos{
+  display: flex;
+  gap: 20px ;
+
+  
+}
