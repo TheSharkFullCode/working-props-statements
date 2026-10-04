@@ -28,3 +28,36 @@
 
   
 }
+
+.caja-nombres{
+  display: flex;
+  gap: 2em;
+}
+
+.container{
+  display: flex;
+  border: solid 1px pink;
+  border-radius: 2em;
+
+}
+.caja-exterior{
+  background-color: aquamarine;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 20px ;
+  
+}
+
+.segunda-capa-exterior{
+
+  background-color: blanchedalmond;
+  margin: 1px;
+
+
+}
+
+
+.parrafo-numero{
+  font-weight: 500;
+}

@@ -3,8 +3,10 @@ import Atanagildo from '../src/assets/reyes/rey_atanagildo.png'
 import Sisebuto from '../src/assets/reyes/rey_Sisebuto.png'
 import Incognito from '../src/assets/reyes/rey_incognito.png'
 import Leogivildo from '../src/assets/reyes/rey_leogivildo.png'
-import './App.css'
 import MyFirstComponent from './components/MyFirstComponent';
+import Saludo from './components/Saludo';
+import './App.css'
+import Boton from './components/Boton';
 
 function App() {
   const [messege,setMessege] = useState("")
@@ -12,6 +14,8 @@ function App() {
   const [imagen,setImagen] = useState(Atanagildo);
   const refCaja = useRef()
   const cambio = 23.16;
+
+  const [numero,setNumero]=useState(0);
 
 
 
@@ -53,31 +57,78 @@ function App() {
   //   e.target.innerHTML = Number( e.target.innerHTML)+1;
   //   console.log(e);
     
-  
+
+       const manejarClick=()=>{
+        alert("¡Clic!")
+      }
+
+      const restarEnlinea=()=>{
+        if(numero > 0){
+
+          setNumero(numero -1)
+
+        }
+      }
+
+      
 
   return (
     <>
-        <div className="Caja" ref={refCaja} style={{background: count >= 8 ? 'red': ""}} onClick={Incrementar}>{count}</div>
-        <div className="value-input">{messege}</div>
-        <div className="container-button">
-          <button onClick={convertir}>multiplicar</button>
+        <div className="container">        
+        
+        <div className="caja-exterior">
+
+        
+              <div className="Caja" ref={refCaja} style={{background: count >= 8 ? 'red': ""}} onClick={Incrementar}>{count}</div>
+
+              <div className="value-input">{messege}</div>
+              <div className="container-button">
+                <button onClick={convertir}>multiplicar</button>
+              </div>
+
+              <div className="container-img">
+              <img src={imagen} onClick={change}/>
+              </div>
+              <div className="caja-input">
+                <input type="text"
+                value={messege}
+                onChange={Changevalue} />
+              </div>               
+
+          </div>
+
+            <div className="segunda-capa-exterior">
+
+            <button onClick={manejarClick}>Click me</button>  
+
+            <button onClick={()=>setNumero(numero +1)}>Sumar</button>
+
+            <span className="parrafo-numero">   {numero}    </span>
+
+            <button onClick={restarEnlinea}>Restar</button>
+           
+            <Boton  texto={"SumarNumero"} AlhacerClick={()=>setNumero(numero +1)}/>
+            <Boton  texto={"RestarNumero"} AlhacerClick={restarEnlinea}/>
+            <Boton  texto="Reiniciar" AlhacerClick={()=>setNumero(0)}/>
+
+            </div>
+
         </div>
 
-        <div className="container-img">
-        <img src={imagen} onClick={change}/>
-        </div>
-        <div className="caja-input">
-          <input type="text"
-          value={messege}
-          onChange={Changevalue} />
-        </div>
-        
         <hr />
+        
         <div className="reyes-godos">
 
             <MyFirstComponent imagen={Atanagildo} nombre={"Atagildo"} ImagenAlternativa={Incognito}/>
             <MyFirstComponent imagen={Sisebuto} nombre={"sisebuto"} ImagenAlternativa={Incognito}/>
             <MyFirstComponent imagen={Leogivildo} nombre={"Leogivildo"} ImagenAlternativa={Incognito}/>
+        </div>
+
+        <div className="caja-nombres">
+
+        <Saludo nombre="Oscar"/>
+        <Saludo nombre="Eliza"/>
+        <Saludo nombre="Pedro"/>
         </div>
     </>
   )

@@ -40,6 +40,8 @@ export default function MyFirstComponent({imagen,nombre, ImagenAlternativa}) {
         }
       }
 
+   
+
 
 
   return (
@@ -52,6 +54,7 @@ export default function MyFirstComponent({imagen,nombre, ImagenAlternativa}) {
 
       <p onClick={OcultarTexto} style={{visibility:verNombre}}>  {nombre}     </p>
 
+    
     </div>
     </>
   )
