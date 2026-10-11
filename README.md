@@ -214,6 +214,31 @@ export default function MyFirstComponent({ imagen, nombre, ImagenAlternativa }) 
 - Diferencia con la versión 1: cualquier clic dentro de la caja avanza un paso, aunque sea en la zona amarilla.
 - ¿Quieres un paso 4? Añade otro `if`.
 ---
+
+## Ejercicio 4:
+# 👑 Reyes Visigodos — Reserva de reyes con React
+## ✨ Funcionalidades
+
+- Galería de cartas generada con `.map()` a partir de un array de datos.
+- Imágenes cargadas automáticamente a partir del nombre de cada rey (sin tildes).
+- Al reservar un rey:
+  - Su precio se suma al total.
+  - Su nombre aparece en el panel de reservados.
+  - Su carta desaparece de la galería.
+- Mensaje final cuando todos los reyes están reservados.
+- Panel del total fijo al hacer scroll, con efecto de cristal.
+- Animación del total cada vez que cambia.
+
+## 📚 Lo que he aprendido
+
+- **Estado en el padre:** el componente `App` controla toda la lógica y los hijos solo avisan cuando se hace clic.
+- **Pasar funciones por props:** así un hijo puede comunicarse con su padre.
+- **Actualización funcional:** `setTotal(prev => prev + precio)` usa siempre el valor más reciente del estado.
+- **Spread operator:** `[...prev, nombre]` copia un array y le añade un elemento nuevo.
+- **`.filter()` + `.includes()`:** para pintar solo los reyes que no están reservados, sin borrar los datos originales.
+- **Renderizado:** cada vez que cambia un estado, React vuelve a ejecutar el componente y actualiza solo lo necesario.
+- **Ternario en JSX:** `condición ? A : B` para mostrar las cartas o el mensaje final.
+- **Datos fuera del componente:** lo que no cambia se define fuera para no recrearlo en cada render.
  
 ## 🚀 Cómo ejecutarlo
  
